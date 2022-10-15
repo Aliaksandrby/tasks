@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>tasks</artifactId>
+        <groupId>by.domain</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>jar</packaging>
+    <artifactId>task5db</artifactId>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.22</version>
+        </dependency>
+        <dependency>
+            <groupId>by.domain</groupId>
+            <artifactId>schema</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <mainClass>by.domain.Main</mainClass>
+                            <cleanupDaemonThreads>false</cleanupDaemonThreads>
+                            <arguments>
+                                <argument>School</argument>
+                                <argument>Kindergarten</argument>
+                                <argument>It-Academy</argument>
+                                <argument>Hypermarket "Oma"</argument>
+                                <argument>Hypermarket "Electrosila"</argument>
+                                <argument>separator</argument>
+                                <argument>2011-05-21</argument>
+                                <argument>8</argument>
+                                <argument>600</argument>
+                                <argument>2011-05-21</argument>
+                                <argument>7</argument>
+                                <argument>100</argument>
+                                <argument>2011-05-22</argument>
+                                <argument>9</argument>
+                                <argument>100</argument>
+                                <argument>2011-05-22</argument>
+                                <argument>10</argument>
+                                <argument>400</argument>
+                                <argument>2011-05-24</argument>
+                                <argument>6</argument>
+                                <argument>1000</argument>
+                                <argument>2011-05-24</argument>
+                                <argument>7</argument>
+                                <argument>20</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

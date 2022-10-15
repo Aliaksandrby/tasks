@@ -59,6 +59,36 @@
         <module>moduleTask9Task12</module>
       </modules>
     </profile>
+    <profile>
+      <id>schema</id>
+      <modules>
+        <module>schema</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>task4db</id>
+      <modules>
+        <module>task4db</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>task5db</id>
+      <modules>
+        <module>task5db</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>task6db</id>
+      <modules>
+        <module>task6db</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>task7db</id>
+      <modules>
+        <module>task7db</module>
+      </modules>
+    </profile>
   </profiles>
 
   <properties>

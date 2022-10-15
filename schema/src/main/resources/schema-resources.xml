@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="Aliaksandrby">
+        <sql>
+            CREATE SCHEMA IF NOT EXISTS mysqldb;
+        </sql>
+    </changeSet>
+    <changeSet id="2" author="Aliaksandrby">
+        <sql>
+            CREATE TABLE IF NOT EXISTS mysqldb.receivers (
+                receiver_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                receiver VARCHAR(30) NOT NULL
+            );
+        </sql>
+    </changeSet>
+    <changeSet id="3" author="Aliaksandrby">
+        <sql>
+            CREATE TABLE IF NOT EXISTS mysqldb.expenses (
+            payment_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            paydate DATE NOT NULL,
+            receiver_id INT,
+            expense DEC(7,2) NOT NULL,
+            CONSTRAINT receivers_receiver_id_fk
+            FOREIGN KEY(receiver_id)
+            REFERENCES receivers(receiver_id)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
