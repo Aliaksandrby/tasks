@@ -7,6 +7,7 @@
   <groupId>by.domain</groupId>
   <artifactId>tasks</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <packaging>pom</packaging>
 
   <name>tasks</name>
@@ -87,6 +88,18 @@
       <id>task7db</id>
       <modules>
         <module>task7db</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>hibernate</id>
+      <modules>
+          <module>hibernate</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>task6ORM</id>
+      <modules>
+        <module>task6ORM</module>
       </modules>
     </profile>
   </profiles>
