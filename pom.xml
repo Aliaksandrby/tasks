@@ -97,9 +97,9 @@
       </modules>
     </profile>
     <profile>
-      <id>task6ORM</id>
+      <id>task67ORM</id>
       <modules>
-        <module>task6ORM</module>
+        <module>task67ORM</module>
       </modules>
     </profile>
   </profiles>

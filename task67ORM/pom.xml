@@ -8,9 +8,8 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <packaging>jar</packaging>
-    <artifactId>hibernate</artifactId>
 
+    <artifactId>task67ORM</artifactId>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
@@ -49,15 +48,10 @@
             <version>2.7.3</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-dependency-plugin</artifactId>
-            <version>3.3.0</version>
-        </dependency>
     </dependencies>
 
     <build>
-        <finalName>hibernate</finalName>
+        <finalName>task67ORM</finalName>
         <plugins>
             <plugin>
                 <groupId>org.liquibase</groupId>
@@ -67,7 +61,7 @@
                     <execution>
                         <id>Update DB</id>
                         <configuration>
-                            <propertyFile>src/main/resources/jdbc.properties</propertyFile>
+                            <propertyFile>src/main/resources/orm67_db.jdbc.properties</propertyFile>
                             <changeLogFile>src/main/resources/changelog.xml</changeLogFile>
                         </configuration>
                         <goals>
@@ -78,7 +72,7 @@
                     <execution>
                         <id>Update test DB</id>
                         <configuration>
-                            <propertyFile>src/test/resources/hi_db_test.jdbc.properties</propertyFile>
+                            <propertyFile>src/test/resources/orm67_db_test.jdbc.properties</propertyFile>
                             <changeLogFile>src/main/resources/changelog.xml</changeLogFile>
                         </configuration>
                         <goals>
@@ -90,25 +84,11 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                            <version>1.18.24</version>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
                 <executions>
                     <execution>
                         <id>copy</id>
-                        <phase>install</phase>
+                        <phase>package</phase>
                         <goals>
                             <goal>copy-dependencies</goal>
                         </goals>
@@ -128,12 +108,32 @@
                         <manifest>
                             <addClasspath>true</addClasspath>.
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>by.domain.run.Main</mainClass>
+                            <mainClass>by.domain.run.App</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <executions>
+                    <execution>
+                        <id>run</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>java</executable>
+                            <arguments>
+                                <argument>-jar</argument>
+                                <argument>target/task67ORM.jar</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
 </project>

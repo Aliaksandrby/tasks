@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_car (
+            car_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            brand VARCHAR(255),
+            model VARCHAR(255),
+            transmission VARCHAR(100),
+            engine_volume INT,
+            color VARCHAR(50)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_book_gen (
+            name_column VARCHAR(50),
+            value_column INT NOT NULL
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_book (
+            book_id INT NOT NULL PRIMARY KEY,
+            name_book VARCHAR(255),
+            writer VARCHAR(100),
+            year_publishing INT,
+            publishing_office VARCHAR(255)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="4" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_watch_seq (
+            next_val INT UNSIGNED PRIMARY KEY NOT NULL
+            );
+            INSERT INTO t_watch_seq VALUES (0);
+        </sql>
+    </changeSet>
+
+    <changeSet id="5" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_watch (
+            watch_id INT NOT NULL PRIMARY KEY,
+            brand VARCHAR(255),
+            type_system VARCHAR(255),
+            body_size INT,
+            memory INT,
+            type_battery VARCHAR(20),
+            screen_size INT
+            );
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

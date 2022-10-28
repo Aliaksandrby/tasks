@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+<t_book book_id="10" name_book="first book" writer="some writer" year_publishing="2007" publishing_office="publisher"/>
+<t_car car_id="21" brand="good brand" model="excellent model" transmission="robot" engine_volume="3" color="black"/>
+<t_watch watch_id="5" brand="bad brand" type_system="ms dos" body_size="9" memory="64" type_battery="li-pol" screen_size="2"/>
+</dataset>
