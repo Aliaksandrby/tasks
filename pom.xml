@@ -102,6 +102,12 @@
         <module>task67ORM</module>
       </modules>
     </profile>
+    <profile>
+      <id>task8ORM</id>
+      <modules>
+        <module>task8ORM</module>
+      </modules>
+    </profile>
   </profiles>
 
   <properties>
