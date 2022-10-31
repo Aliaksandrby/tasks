@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<dataset>
+
+    <t_device id="1" DEVICE_TYPE="FLASH_CARD" brand="kingston" os_type="null" screen_size="0" screen_type="null" volume="512" file_system="ntfs" speed_write="100" speed_read="120"/>
+    <t_device id="2" DEVICE_TYPE="PLAYER" brand="samsung" os_type="tizen" screen_size="6" screen_type="IPS" volume="0" file_system="null" speed_write="0" speed_read="0"/>
+
+    <t_car id="1" producer="mercedes engine"/>
+    <t_car id="2" producer="toyota"/>
+    <t_engine engine_id="1" type_engine="h2o" number_cylinders="5" power="300"/>
+    <t_body body_id="2" type_body="sedan" color="grey"  number_doors="10"/>
+
+    <t_person id="1" name="name_1" surname="surname_1"/>
+    <t_programmer id="2" name="name_2" surname="surname_2" language="java"/>
+    <t_driver id="3" name="name_3" surname="surname_3" car_name="car_3"/>
+
+</dataset>

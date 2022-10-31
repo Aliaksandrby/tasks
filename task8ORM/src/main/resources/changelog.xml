@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_device (
+                id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                DEVICE_TYPE VARCHAR(20),
+                brand VARCHAR(50),
+                os_type VARCHAR(50),
+                screen_size INT,
+                screen_type VARCHAR(50),
+                volume INT,
+                file_system VARCHAR(50),
+                speed_write INT,
+                speed_read INT
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="2" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_car (
+                id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                producer VARCHAR(50)
+            );
+
+            CREATE TABLE IF NOT EXISTS t_body (
+                body_id INT PRIMARY KEY,
+                type_body VARCHAR(50),
+                color VARCHAR(50),
+                number_doors INT,
+                FOREIGN KEY (body_id) REFERENCES t_car(id)
+            );
+
+            CREATE TABLE IF NOT EXISTS t_engine (
+                engine_id INT PRIMARY KEY,
+                type_engine VARCHAR(50),
+                number_cylinders INT,
+                power INT,
+                FOREIGN KEY (engine_id) REFERENCES t_car(id)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="3" author="Aliaksandr by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_person (
+                id INT NOT NULL PRIMARY KEY,
+                name VARCHAR(50),
+                surname VARCHAR(50)
+            );
+
+            CREATE TABLE IF NOT EXISTS t_person_seq (
+            next_val INT UNSIGNED PRIMARY KEY NOT NULL
+            );
+            INSERT INTO t_person_seq VALUES (0);
+
+            CREATE TABLE IF NOT EXISTS t_programmer (
+                id INT NOT NULL PRIMARY KEY,
+                name VARCHAR(50),
+                surname VARCHAR(50),
+                language VARCHAR(50)
+            );
+
+            CREATE TABLE IF NOT EXISTS t_driver (
+                id INT NOT NULL PRIMARY KEY,
+                name VARCHAR(50),
+                surname VARCHAR(50),
+                car_name VARCHAR(50)
+            );
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
