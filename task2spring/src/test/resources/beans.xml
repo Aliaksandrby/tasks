@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+
+    <bean id="figureFactory" class="by.domain.factory.FigureFactory" />
+
+    <bean id="hexagonSingleton" factory-bean="figureFactory" factory-method="getFigure"
+          init-method="init" destroy-method="destroyIntoBeansXml">
+        <constructor-arg index="0" value="hexagon"/>
+    </bean>
+
+    <bean id="squareSingleton" factory-bean="figureFactory" factory-method="getFigure"
+          init-method="init" destroy-method="destroyIntoBeansXml">
+        <constructor-arg index="0" value="square"/>
+    </bean>
+
+</beans>
