@@ -114,6 +114,12 @@
         <module>task2spring</module>
       </modules>
     </profile>
+    <profile>
+      <id>task8spring</id>
+      <modules>
+        <module>task8spring</module>
+      </modules>
+    </profile>
   </profiles>
 
   <properties>

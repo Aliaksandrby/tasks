@@ -7,10 +7,16 @@
 */
 
 package by.domain.run;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 //default-init и default-destroy методы будут работать если убрать методы инициализации
 //и уничтожения для каждого бина в отдельности и подкорректировать beans.xml
 public class Task2Spring {
     public static void main(String[] args) {
-        new Runner();
+        try(AnnotationConfigApplicationContext context =
+                    new AnnotationConfigApplicationContext(Runner.class)) {
+            context.getBean("runner",Runner.class);
+        }
     }
 }
