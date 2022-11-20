@@ -19,4 +19,8 @@
         <constructor-arg index="0" value="square"/>
     </bean>
 
+    <bean id="rhombus" class="by.domain.bean.Rhombus" factory-method="getRhombus">
+
+    </bean>
+
 </beans>
