@@ -5,9 +5,10 @@
 * работоспособность. (стр 175)
 *
 * Задание 9:
-Реализуйте Spring проект. Сконфигурируйте beans с использованием
-Qualifying Ambiguous Dependencies. Запустите приложение и проверьте
-работоспособность. (стр 176)
+* Реализуйте Spring проект. Сконфигурируйте beans с использованием
+* Qualifying Ambiguous Dependencies. Запустите приложение и проверьте
+* работоспособность. (стр 176)
+* pay attention class Car
 */
 
 package by.domain.run;
