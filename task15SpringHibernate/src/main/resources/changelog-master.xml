@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+		http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+    <changeSet id="1" author="Aliaksandr.by">
+        <sql>
+            CREATE TABLE IF NOT EXISTS t_car (
+                id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+                name VARCHAR(255),
+                year INT,
+                color VARCHAR(100)
+            );
+        </sql>
+    </changeSet>
+    <changeSet id="2" author="Aliaksandr.by">
+        <sql>
+            INSERT INTO t_car
+            VALUES
+            (1,'bmw x1',2010,'red'),
+            (2,'bmw x2',2011,'green'),
+            (3,'bmw x3',2012,'blue'),
+            (4,'bmw x4',2013,'black'),
+            (5,'bmw x5',2014,'yellow'),
+            (6,'bmw x6',2015,'brown');
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>

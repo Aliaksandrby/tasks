@@ -8,7 +8,7 @@
   <artifactId>tasks</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
 
   <name>tasks</name>
   <!-- FIXME change it to the project's website -->
@@ -124,6 +124,12 @@
       <id>task10spring</id>
       <modules>
         <module>task10spring</module>
+      </modules>
+    </profile>
+    <profile>
+      <id>task15SpringHibernate</id>
+      <modules>
+        <module>task15SpringHibernate</module>
       </modules>
     </profile>
   </profiles>
